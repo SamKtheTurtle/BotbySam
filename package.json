@@ -1,0 +1,16 @@
+{
+  "name": "themetbot",
+  "version": "1.0.0",
+  "description": "MET bot by Sam",
+  "main": "TheMetBot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SamKDO",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.3.0",
+    "save": "^2.3.3",
+    "twit": "^2.2.11"
+  }
+}
