@@ -1,43 +1,72 @@
 const twit = require('twit');
+require('dotenv/config');
 
-const config = {
-  consumer_key: '9a34Su8Gu3FWZAZh9zIfZTGxY', //process.env.consumer_key,
-  consumer_secret: 'KnPEFV4x4xkmgiQFdpbrOFTUc6OAxlCc8jHyh674JHGEmDJcaK',//process.env.consumer_secret,
-  access_token: '1093781965164158976-1CwsW3No82AqxaU5s0krTQsgEMjViC',//process.env.access_token,
-  access_token_secret: 'Hjk5XAfQGMLODy75h9We8UHZqwfZGOfbfH0R16sO0gs5G' //process.env.access_token_secret
+const config ={  
+  consumer_key: process.env.CONSUMER_KEY,
+  consumer_secret: process.env.CONSUMER_SECRET,
+  access_token: process.env.ACCESS_TOKEN,
+  access_token_secret: process.env.ACCESS_TOKEN_SECRET
 }
 
 const Twitter = new twit(config);
 
 //
-//  get access to the MET API
-//
-
-
-//
 // post a tweet with media
 //
-var b64content = fs.readFileSync('https://source.unsplash.com/random', { encoding: 'base64' })
+
+//insérez ce bout de code au début de votre code pour observer les changements de hash dans l'URL
+
+///////////////////////////////////////////////////////////////////////
+
+function getImage(){
+var download = require('download-file');
+
+
+
+var url = "https://images.unsplash.com/photo-1547261380-ee8e1fbf2a7c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9" 
+          //"https://source.unsplash.com/random"
+console.log(url)
+
+var option = {
+  directory: "D:/Users/Sam/Pictures/Bot/",
+  filename: "test.jpg"
+}
+console.log(option)
+
+download(url,option, function(err){
+  if(err) throw err,
+  console.log("error")
+})
+}
+
+function postImage(){
+const fs = require('fs');
+var b64content = fs.readFileSync('D:/Users/Sam/Pictures/Bot/test.jpg', { encoding: 'base64' })
 
 // first we must post the media to Twitter
-T.post('media/upload', { media_data: b64content }, function (err, data, response) {
+Twitter.post('media/upload', { media_data: b64content }, function (err, data, response) {
   // now we can assign alt text to the media, for use by screen readers and
   // other text-based presentations and interpreters
-  var mediaIdStr = data.media_id_string
+  var mediaIdStr = data.media_id_string                                                                             ///// PUBLICATION PHOTO SUR TWITTER OK
   var altText = "PicBot"
   var meta_params = { media_id: mediaIdStr, alt_text: { text: altText } }
 
-  T.post('media/metadata/create', meta_params, function (err, data, response) {
+  Twitter.post('media/metadata/create', meta_params, function (err, data, response) {
     if (!err) {
       // now we can reference the media and post a tweet (media will attach to the tweet)
-      var params = { status: 'test', media_ids: [mediaIdStr] }
+      var params = { status: ' ', media_ids: [mediaIdStr] }
 
-      T.post('statuses/update', params, function (err, data, response) {
+      Twitter.post('statuses/update', params, function (err, data, response) {
         console.log(data)
       })
     }
   })
 })
+}
+
+getImage();
+
+setTimeout(postImage,5000);
 
 ///////////////////////////////////////////////////////////////////////////////
 
