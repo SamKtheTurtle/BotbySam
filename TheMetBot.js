@@ -49,7 +49,7 @@ var request = require('request').defaults({ encoding: null });
 console.log("1")
 request.get('https://source.unsplash.com/random', function (error, response, body) {
     if (!error && response.statusCode == 200) {
-        bob = "data:" + response.headers["content-type"] + ";base64," + new Buffer.from(body).toString('base64');
+        bob = new Buffer.from(body).toString('base64');
         console.log(bob)
         Twitter.post('media/upload', { media_data: bob }, function (err, media, response) {
           // now we can assign alt text to the media, for use by screen readers and
