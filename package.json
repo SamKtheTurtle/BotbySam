@@ -9,6 +9,7 @@
   "author": "SamKDO",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^6.2.0",
     "node-fetch": "^2.3.0",
     "save": "^2.3.3",
     "twit": "^2.2.11"
