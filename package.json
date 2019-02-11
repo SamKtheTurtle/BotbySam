@@ -9,10 +9,13 @@
   "author": "SamKDO",
   "license": "ISC",
   "dependencies": {
+    "curl-request": "^1.1.1",
     "dotenv": "^6.2.0",
     "download-file": "^0.1.5",
     "node-fetch": "^2.3.0",
+    "request": "^2.81.0",
     "save": "^2.3.3",
-    "twit": "^2.2.11"
+    "twit": "^2.2.11",
+    "unsplash-js": "^4.8.0"
   }
 }
