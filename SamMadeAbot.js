@@ -2,10 +2,10 @@ const twit = require('twit');
 require('dotenv/config');
 
 const config ={  
-  consumer_key: process.env.CONSUMER_KEY,
-  consumer_secret: process.env.CONSUMER_SECRET,
-  access_token: process.env.ACCESS_TOKEN,
-  access_token_secret: process.env.ACCESS_TOKEN_SECRET
+  consumer_key: '9a34Su8Gu3FWZAZh9zIfZTGxY',
+  consumer_secret: 'KnPEFV4x4xkmgiQFdpbrOFTUc6OAxlCc8jHyh674JHGEmDJcaK',
+  access_token: '1093781965164158976-1CwsW3No82AqxaU5s0krTQsgEMjViC',
+  access_token_secret: 'Hjk5XAfQGMLODy75h9We8UHZqwfZGOfbfH0R16sO0gs5G'
 }
 
 const Twitter = new twit(config);
