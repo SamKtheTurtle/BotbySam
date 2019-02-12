@@ -2,9 +2,10 @@
   "name": "themetbot",
   "version": "1.0.0",
   "description": "MET bot by Sam",
-  "main": "TheMetBot.js",
+  "main": "SamMadeAbot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node SamMadeAbot.js"
   },
   "author": "SamKDO",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "curl-request": "^1.1.1",
     "dotenv": "^6.2.0",
     "download-file": "^0.1.5",
+    "express": "^4.16.4",
     "node-fetch": "^2.3.0",
     "request": "^2.81.0",
     "save": "^2.3.3",
