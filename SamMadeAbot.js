@@ -1,5 +1,5 @@
 const twit = require('twit');
-require('dotenv/config');
+//require('dotenv/config');
 
 const config ={  
   consumer_key: '9a34Su8Gu3FWZAZh9zIfZTGxY',

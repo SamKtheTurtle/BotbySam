@@ -1,10 +1,9 @@
 {
-  "name": "themetbot",
+  "name": "sammadeabot",
   "version": "1.0.0",
-  "description": "MET bot by Sam",
+  "description": "bot by Sam",
   "main": "SamMadeAbot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node SamMadeAbot.js"
   },
   "author": "SamKDO",
