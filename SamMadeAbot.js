@@ -1,11 +1,11 @@
 const twit = require('twit');
-//require('dotenv/config');
+require('dotenv/config');
 
 const config ={  
-  consumer_key: '9a34Su8Gu3FWZAZh9zIfZTGxY',
-  consumer_secret: 'KnPEFV4x4xkmgiQFdpbrOFTUc6OAxlCc8jHyh674JHGEmDJcaK',
-  access_token: '1093781965164158976-1CwsW3No82AqxaU5s0krTQsgEMjViC',
-  access_token_secret: 'Hjk5XAfQGMLODy75h9We8UHZqwfZGOfbfH0R16sO0gs5G'
+  consumer_key: process.env.CONSUMER_KEY,
+  consumer_secret: process.env.CONSUMER_SECRET,
+  access_token: process.env.ACCESS_TOKEN,
+  access_token_secret: process.env.ACCESS_TOKEN_SECRET
 }
 
 const Twitter = new twit(config);
@@ -17,7 +17,7 @@ function getImage(){
 
 var request = require('request').defaults({ encoding: null });
 console.log("1")
-request.get('https://source.unsplash.com/random', function (error, response, body) {
+request.get('https://source.unsplash.com/random?flight', function (error, response, body) {
     if (!error && response.statusCode == 200) {
         bob = new Buffer.from(body).toString('base64');
         console.log(bob)
