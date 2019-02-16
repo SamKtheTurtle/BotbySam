@@ -36,7 +36,6 @@ request.get('https://source.unsplash.com/random?flight', function (error, respon
 }
 
 
-getImage();
 setInterval(getImage, 14400000);
 
 

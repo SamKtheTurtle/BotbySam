@@ -15,7 +15,7 @@
     "download-file": "^0.1.5",
     "express": "^4.16.4",
     "node-fetch": "^2.3.0",
-    "request": "^2.81.0",
+    "request": "^2.88.0",
     "save": "^2.3.3",
     "twit": "^2.2.11",
     "unsplash-js": "^4.8.0"
